@@ -64,6 +64,7 @@
                     </h4>
                     <h2>
                         장학금 지원 확인하기
+
                     </h2>
                     <div class="more-btn-out">
                         <a href="#" class="more-btn">자세히보기</a>
@@ -82,7 +83,7 @@
                 <div class="swiper-wrapper">
                     {% for image in images %}
                     <div class="swiper-slide">
-                        <img src="{{ image.image.url }}" height="100%" alt="">
+                        <img src="{% if image.image_url %} {{ image.image_url }} {% else %} {{ image.image.url }} {% endif %}" height="100%" alt="">
                     </div>
                     {% endfor %}
                 </div>

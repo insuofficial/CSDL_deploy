@@ -17,7 +17,8 @@ class Main(models.Model):
         return 'main'
 
 class Main_image(models.Model):
-    image = models.ImageField(upload_to='main_images/', blank=True, null=True)
+    image_url = models.URLField(max_length=400, blank=True, null=True)
+    image = models.ImageField(upload_to='main_images/', default='homepage/img/no-image-icon.png')
 
     def __str__(self):
         return '[{}] Main-image'.format(self.pk)
@@ -38,7 +39,8 @@ class Member(models.Model):
     tel = models.CharField(max_length=32, blank=True, null=True)
     office = models.CharField(max_length=128, blank=True, null=True)
     affiliation = models.CharField(max_length=64, blank=True, null=True)
-    image = models.ImageField(upload_to='member_images/', blank=True, null=True)
+    image_url = models.URLField(max_length=400, blank=True, null=True)
+    image = models.ImageField(upload_to='member_images/', default='homepage/img/no-image-icon.png')
     detail = RichTextUploadingField(blank=True, null=True)
 
     def __str__(self):
@@ -139,7 +141,8 @@ class Seminar(models.Model):
 
 class Album(models.Model):
     title = models.CharField(max_length=128, primary_key=True)
-    thumbnail = models.ImageField(upload_to='Album/')
+    image_url = models.URLField(max_length=400, blank=True, null=True)
+    thumbnail = models.ImageField(upload_to='Album/',  default='homepage/img/no-image-icon.png')
     detail = RichTextUploadingField()
     date = models.DateField()
 

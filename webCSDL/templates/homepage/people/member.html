@@ -26,7 +26,7 @@
             {% for member in members_phd %}
             <div class="top-info d-flex">
                 <div class="top-info-image d-flex">
-                    <img src="{{ member.image.url }}" alt="img">
+                    <img src="{% if member.image_url %} {{ member.image_url }} {% else %} {{ member.image.url }} {% endif %}" alt="img">
                 </div>
                 <div class="top-info-content d-flex flex-column">
                     <div class="top-info-name">

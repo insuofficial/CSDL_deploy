@@ -24,7 +24,7 @@
         <div class="professor-in d-flex flex-column">
             <div class="top-info d-flex">
                 <div class="top-info-image d-flex">
-                    <img src="{{ profile.image.url }}" alt="img">
+                    <img src="{% if profile.image_url %} {{ profile.image_url }} {% else %} {{ profile.image.url }} {% endif %}" alt="img">
                 </div>
                 <div class="top-info-content d-flex flex-column">
                     <div class="top-info-name">

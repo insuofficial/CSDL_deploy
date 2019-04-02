@@ -33,7 +33,7 @@
           <div class="album-out d-flex">
             {% for album in albums %}
             <a href="{% url 'album_detail' album.pk %}" class="album d-flex flex-column">
-                <img src="{{ album.thumbnail.url }}" alt="img">
+                <img src="{% if album.image_url %} {{ album.image_url }} {% else %} {{ album.thumbnail.url }} {% endif %}" alt="img">
                 <p>{{ album.title }}</p>
             </a>
             {% endfor %}
