@@ -1,0 +1,52 @@
+
+/* ---------- sub-header start -----------*/
+.sub-header-menu ul li:nth-of-type(2) {
+    background-color: #fccf31;
+}
+/* ---------- sub-header end -----------*/
+
+
+/* ---------- middle start -----------*/
+
+.conference_out {
+    max-width: 1300px;
+    margin: 2rem auto;
+}
+
+.conference_in {
+    margin: 0 1rem;
+}
+
+.title-out, .year-out {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title {
+    margin: 1rem 0.5rem;
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.title span {
+    height: 0.2rem;
+    width: 10rem;
+    margin-bottom: 0.5rem;
+    background-color: #003876;
+    content: '';
+}
+
+
+.mt-3 {
+    margin: 0!important;
+}
+
+/* ---------- middle end -----------*/
+
+
+/* ---------- media screen start -----------*/
+@media (min-width: 992px) {
+
+}
+
+/* ---------- media screen end -----------*/

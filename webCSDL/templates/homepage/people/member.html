@@ -1,0 +1,127 @@
+{% extends "homepage/header_footer.html" %}
+{% load staticfiles %}
+
+<!-- head part -->
+{% block title %}Member{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'homepage/people/member_style.css' %}">
+<link rel="stylesheet" href="{% static 'homepage/includes/sub_header_style.css' %}">
+{% endblock %}
+
+{% block js %}
+{% endblock %}
+
+
+{% block sub_header %}
+{% include 'homepage/includes/sub_header_people.html' %}
+{% endblock %}
+
+
+<!-- middle part -->
+{% block middle %}
+<div class="middle">
+    <div class="professor-out d-flex">
+        <div class="professor-in d-flex flex-column">
+            <div class="phd d-flex flex-column"><span></span>PH.D. & COMBINED CANDIDATE</div>
+            {% for member in members_phd %}
+            <div class="top-info d-flex">
+                <div class="top-info-image d-flex">
+                    <img src="{{ member.image.url }}" alt="img">
+                </div>
+                <div class="top-info-content d-flex flex-column">
+                    <div class="top-info-name">
+                        {{ member.name_ko }}
+                        <span>{{ member.name_en }}</span>
+                    </div>
+                    <div class="top-info-more">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                  <th scope="row">Course</th>
+                                  <td>{{ member.course }}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">Research Area</th>
+                                  <td>{{ member.research}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">E-mail</th>
+                                  <td>{{ member.email }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+            <div class="ms d-flex flex-column"><span></span>M.S CANDIDATE</div>
+            {% for member in members_ms %}
+            <div class="top-info d-flex">
+                <div class="top-info-image d-flex">
+                    <img src="{{ member.image.url }}" alt="img">
+                </div>
+                <div class="top-info-content d-flex flex-column">
+                    <div class="top-info-name">
+                        {{ member.name_ko }}
+                        <span>{{ member.name_en }}</span>
+                    </div>
+                    <div class="top-info-more">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                  <th scope="row">Course</th>
+                                  <td>{{ member.course }}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">Research Area</th>
+                                  <td>{{ member.research}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">E-mail</th>
+                                  <td>{{ member.email }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+            <div class="intern d-flex flex-column"><span></span>INTERN</div>
+            {% for member in members_intern %}
+            <div class="top-info d-flex">
+                <div class="top-info-image d-flex">
+                    <img src="{{ member.image.url }}" alt="img">
+                </div>
+                <div class="top-info-content d-flex flex-column">
+                    <div class="top-info-name">
+                        {{ member.name_ko }}
+                        <span>{{ member.name_en }}</span>
+                    </div>
+                    <div class="top-info-more">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                  <th scope="row">Course</th>
+                                  <td>{{ member.course }}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">Research Area</th>
+                                  <td>{{ member.research}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">E-mail</th>
+                                  <td>{{ member.email }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,35 @@
+
+/* ---------- sub-header start -----------*/
+.sub-header-menu ul li:nth-of-type(1) {
+    background-color: #fccf31;
+}
+/* ---------- sub-header end -----------*/
+
+
+
+/* ---------- middle start -----------*/
+
+.list_out {
+    max-width: 1300px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.notice td:nth-of-type(1) {
+    width: 60%;
+}
+
+.content {
+    width: 70%;
+    margin: 0 auto;
+}
+
+/* ---------- middle end -----------*/
+
+
+/* ---------- media screen start -----------*/
+@media (min-width: 992px) {
+
+}
+
+/* ---------- media screen end -----------*/

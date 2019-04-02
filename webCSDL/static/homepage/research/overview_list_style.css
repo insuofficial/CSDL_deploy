@@ -1,0 +1,81 @@
+
+/* ---------- sub-header start -----------*/
+.sub-header-menu ul li:nth-of-type(1) {
+    background-color: #fccf31;
+}
+/* ---------- sub-header end -----------*/
+
+
+/* ---------- middle start -----------*/
+
+.overview-out {
+    max-width: 1300px;
+    padding: 2rem 0;
+    margin: 2rem auto;
+    background-color: #eeeeee;
+}
+
+.overview-in {
+    margin: 0rem auto;
+    height: 37rem;
+    width: 42rem;
+}
+
+.circle {
+    position: relative;
+    border-radius: 50%;
+    height: 22rem;
+    width: 22rem;
+    opacity: 0.9;
+    justify-content: center;
+    align-items: center;
+}
+
+.overview-in a:nth-of-type(1) {
+    left: 10rem;
+    background-color: #629dcc;
+}
+
+.overview-in a:nth-of-type(2) {
+    top: -7rem;
+    background-color: #60bcbc;
+}
+
+.overview-in a:nth-of-type(3) {
+    left: 20rem;
+    top: -29rem;
+    background-color: #4c709f;
+}
+
+.research_area {
+    align-items: center;
+}
+
+.research_area h1{
+    font-size: 2rem;
+    color: yellow;
+}
+
+.research{
+    width: 18rem;
+
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+
+    margin: 0.2rem 0;
+    border: 1px solid #eeeeee;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+/* ---------- middle end -----------*/
+
+
+/* ---------- media screen start -----------*/
+@media (min-width: 992px) {
+
+}
+
+/* ---------- media screen end -----------*/

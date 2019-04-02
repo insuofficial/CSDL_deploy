@@ -1,0 +1,62 @@
+/* ---------- sub-header start -----------*/
+.sub-header-out {
+    display: block;
+    width: 100%;
+}
+
+.sub-header-in {
+    display: block;
+    margin: 0 auto;
+    max-width: 1300px;
+}
+
+.sub-header-name {
+    display: table;
+    height: 10rem;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    background: linear-gradient(to top, rgba(25, 25, 25, 0.8) 0%, rgba(95, 95, 95, 0.8) 100%),url(../img/category_background1.jpg);
+    background-size: 100%;
+}
+
+.sub-header-name h1 {
+    display: table-cell;
+    vertical-align: middle;
+    color: white;
+    font-size: 3.4rem;
+    font-weight: 500;
+}
+
+.sub-header-menu {
+    max-width: 1300px;
+    width: 100%;
+    height: 4.5rem;
+    margin: 0 auto;
+    background-color: #f1f5fa;
+}
+
+.sub-header-menu ul {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding-left: inherit;
+}
+
+.sub-header-menu ul li {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.sub-header-menu ul li a {
+    display: inline-block;
+    color: black;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+/* ---------- sub-header end -----------*/

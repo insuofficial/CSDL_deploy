@@ -1,0 +1,46 @@
+
+/* ---------- sub-header start -----------*/
+.sub-header-menu ul li:nth-of-type(3) {
+    background-color: #fccf31;
+}
+/* ---------- sub-header end -----------*/
+
+
+/* ---------- middle start -----------*/
+.professor-out {
+    max-width: 1300px;
+    margin: 1.5rem auto;
+}
+
+.professor-in {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.phd, .ms {
+    margin: 1rem 0.5rem;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.phd span, .ms span {
+    height: 2px;
+    width: 40px;
+    margin-bottom: 0.5rem;
+    background-color: #003876;
+    content: '';
+}
+
+
+
+
+/* ---------- middle end -----------*/
+
+
+/* ---------- media screen start -----------*/
+
+
+
+
+
+/* ---------- media screen end -----------*/

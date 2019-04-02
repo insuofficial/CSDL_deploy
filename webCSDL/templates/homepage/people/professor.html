@@ -1,0 +1,69 @@
+{% extends "homepage/header_footer.html" %}
+{% load staticfiles %}
+
+<!-- head part -->
+{% block title %}Professor{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'homepage/people/professor_style.css' %}">
+<link rel="stylesheet" href="{% static 'homepage/includes/sub_header_style.css' %}">
+{% endblock %}
+
+{% block js %}
+{% endblock %}
+
+
+{% block sub_header %}
+{% include 'homepage/includes/sub_header_people.html' %}
+{% endblock %}
+
+
+<!-- middle part -->
+{% block middle %}
+<div class="middle">
+    <div class="professor-out d-flex">
+        <div class="professor-in d-flex flex-column">
+            <div class="top-info d-flex">
+                <div class="top-info-image d-flex">
+                    <img src="{{ profile.image.url }}" alt="img">
+                </div>
+                <div class="top-info-content d-flex flex-column">
+                    <div class="top-info-name">
+                        {{ profile.name_ko }}
+                        <span>{{ profile.name_en }}</span>
+                    </div>
+                    <div class="top-info-more">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                  <th scope="row">Campus</th>
+                                  <td>Shinchon</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">Department</th>
+                                  <td>Department of Electrical and Electronic Engineering</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">E-mail</th>
+                                  <td>{{ profile.email }}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">Tel</th>
+                                  <td>{{ profile.tel }}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">Office</th>
+                                  <td>{{ profile.office }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        </div>
+            <div class="bottom-info d-flex flex-column">
+                    {{ profile.detail|safe }}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

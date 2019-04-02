@@ -1,0 +1,35 @@
+{% extends "homepage/header_footer.html" %}
+{% load staticfiles %}
+
+<!-- head part -->
+{% block title %}Conference{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'homepage/publication/conference_post_style.css' %}">
+<link rel="stylesheet" href="{% static 'homepage/includes/sub_header_style.css' %}">
+{% endblock %}
+
+{% block js %}
+{% endblock %}
+
+
+{% block sub_header %}
+{{ form.media }}
+{% include 'homepage/includes/sub_header_publication.html' %}
+{% endblock %}
+
+
+<!-- middle part -->
+{% block middle %}
+<div class="middle">
+
+    <form method="post" >
+        {% csrf_token %}
+        {{ form.media }}
+        {% include 'homepage/includes/include_form.html' %}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>
+{% endblock %}
+

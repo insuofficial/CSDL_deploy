@@ -1,0 +1,5 @@
+- bootstrap4 mobile menu: https://medium.com/wdstack/examples-bootstrap-4-navbar-b3c9dc0edc1a
+
+- bootstrap3 mobile menu: https://www.w3schools.com/bootstrap/bootstrap_navbar.asp
+
+django: https://wonderwall.hatenablog.com/entry/2018/03/22/001500

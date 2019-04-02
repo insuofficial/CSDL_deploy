@@ -1,0 +1,72 @@
+{% extends "homepage/header_footer.html" %}
+{% load staticfiles %}
+
+<!-- head part -->
+{% block title %}Journal{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'homepage/publication/journal_list_style.css' %}">
+<link rel="stylesheet" href="{% static 'homepage/includes/sub_header_style.css' %}">
+{% endblock %}
+
+{% block js %}
+{% endblock %}
+
+
+{% block sub_header %}
+{% include 'homepage/includes/sub_header_publication.html' %}
+{% endblock %}
+
+
+<!-- middle part -->
+{% block middle %}
+<div class="middle">
+    <div class="journal-out d-flex flex-column">
+        <div class="journal_in">
+            <div class="title-out d-flex">
+                <h1 class="title d-inline-flex flex-column"><span></span>International Journal</h1>
+                {% if user.is_staff %}
+                <div class="mb-4">
+                    <a href="{% url 'journal_post' %}" class="btn btn-primary">New Journal</a>
+                </div>
+                {% endif %}
+            </div>
+
+
+            <h1 class="year d-flex"><span></span>Submitted</h1>
+            {% for journal in journals_submitted %}
+            <div class="journal d-flex">
+                <div>{{ journal.journal }}</div>
+                {% if user.is_staff %}
+                <div class="mt-3">
+                    <a href="{% url 'journal_edit' journal.pk %}"
+                        class="btn btn-primary btn-sm"
+                        role="button">Edit</a>
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+
+
+            {% for year in years %}
+            <h1 class="year d-flex"><span></span>{{ year }}</h1>
+            {% for journal in journals %}
+            {% if jornal.year == year %}
+            <div class="journal d-flex">
+                <div>{{ journal.journal }}</div>
+                {% if user.is_staff %}
+                <div class="mt-3">
+                    <a href="{% url 'journal_edit' journal.pk %}"
+                        class="btn btn-primary btn-sm"
+                        role="button">Edit</a>
+                </div>
+                {% endif %}
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
+        </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

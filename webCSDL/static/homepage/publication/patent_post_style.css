@@ -1,0 +1,19 @@
+
+/* ---------- sub-header start -----------*/
+.sub-header-menu ul li:nth-of-type(3) {
+    background-color: #fccf31;
+}
+/* ---------- sub-header end -----------*/
+
+
+/* ---------- middle start -----------*/
+
+/* ---------- middle end -----------*/
+
+
+/* ---------- media screen start -----------*/
+@media (min-width: 992px) {
+
+}
+
+/* ---------- media screen end -----------*/

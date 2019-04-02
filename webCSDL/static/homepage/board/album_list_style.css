@@ -1,0 +1,57 @@
+
+/* ---------- sub-header start -----------*/
+.sub-header-menu ul li:nth-of-type(3) {
+    background-color: #fccf31;
+}
+/* ---------- sub-header end -----------*/
+
+
+/* ---------- middle start -----------*/
+.list-out {
+    max-width: 1300px;
+    margin: 1.5rem auto;
+}
+
+.title-out {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title {
+    margin: 1rem 0.5rem;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.title span {
+    height: 2px;
+    width: 80px;
+    margin-bottom: 0.5rem;
+    background-color: #003876;
+    content: '';
+}
+
+.album-out {
+    margin: 1rem;
+}
+
+.album {
+    padding: 1.5rem 0.8rem;
+    border: 1px solid #eeeeee;
+    border-radius: 5px;
+}
+
+.mb-4, .mt-3 {
+    margin: 0!important;
+    float: right;
+}
+
+/* ---------- middle end -----------*/
+
+
+/* ---------- media screen start -----------*/
+@media (min-width: 992px) {
+
+}
+
+/* ---------- media screen end -----------*/

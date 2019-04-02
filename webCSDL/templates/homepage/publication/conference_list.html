@@ -1,0 +1,43 @@
+{% extends "homepage/header_footer.html" %}
+{% load staticfiles %}
+
+<!-- head part -->
+{% block title %}Conference{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'homepage/publication/conference_list_style.css' %}">
+<link rel="stylesheet" href="{% static 'homepage/includes/sub_header_style.css' %}">
+{% endblock %}
+
+{% block js %}
+{% endblock %}
+
+
+{% block sub_header %}
+{% include 'homepage/includes/sub_header_publication.html' %}
+{% endblock %}
+
+
+<!-- middle part -->
+{% block middle %}
+<div class="middle">
+    <div class="conference-out d-flex flex-column">
+        <div class="conference_in">
+            <div class="title-out d-flex">
+                <h1 class="title d-inline-flex flex-column"><span></span>Conference</h1>
+                {% if user.is_staff %}
+                <div class="mt-3">
+                    <a href="{% url 'conference_edit' conference.pk %}"
+                        class="btn btn-primary btn-sm"
+                        role="button">Edit</a>
+                </div>
+                {% endif %}
+            </div>
+            <div>
+                {{ conference.conference|safe }}
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

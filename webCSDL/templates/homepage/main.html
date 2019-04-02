@@ -1,0 +1,186 @@
+{% extends "homepage/header_footer.html" %}
+{% load staticfiles %}
+
+
+<!-- head part -->
+{% block css %}
+<link rel="stylesheet" href="{% static 'swiper/swiper.min.css' %}">
+<link rel="stylesheet" href="{% static 'homepage/main_style.css' %}">
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'swiper/swiper.min.js' %}"></script>
+
+<script>
+    $(function(){
+        if ($(".project-paper").css("display") == 'flex') {
+            var maxHeight = 0;
+            $(".content").each(function () {
+                if ($(this).height() > maxHeight) {
+                    maxHeight = $(this).height();
+                }
+            });
+            $(".content").height(maxHeight);
+        }
+
+            $(window).resize(function() {
+                $(".content").css('height', 'auto');
+
+                if ($(".project-paper").css("display") == 'flex') {
+                    var maxHeight = 0;
+                    $(".content").each(function () {
+                        if ($(this).height() > maxHeight) {
+                            maxHeight = $(this).height();
+                        }
+                    });
+                    $(".content").height(maxHeight);
+                }
+            });
+    });
+
+</script>
+{% endblock %}
+
+
+<!-- middle part -->
+{% block middle %}
+<div class="middle">
+    <div class="out">
+
+        <div class="notice">
+            {{ main.notice|safe }}
+            <!-- -->
+                <div class="d-flex flex-column" style="
+                padding: 5rem 20%;
+                    align-items: center;
+                    background-image: url({% static 'homepage/img/internship_background_trim.jpg' %});
+                    background-size: cover
+                ">
+                    <h1 class="title">
+                        Student Recruiting
+                    </h1>
+                    <h4 style="text-align: center; padding: 1rem 0 2rem 0">
+                        연세대학교 무선 통신 회로 설계 연구실에서는 우수하고 열정적인 학생들을 모집하고 있습니다.
+                    </h4>
+                    <h2>
+                        장학금 지원 확인하기
+                    </h2>
+                    <div class="more-btn-out">
+                        <a href="#" class="more-btn">자세히보기</a>
+                    </div>
+                </div>
+            <!-- -->
+        </div>
+
+        <div class="intro align-items-center">
+            <div class="d-flex flex-column align-items-center">
+                <div class="title">Introduction</div>
+                <div>{{ main.introduction|safe }}</div>
+            </div>
+            <div class="images">
+                <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    {% for image in images %}
+                    <div class="swiper-slide">
+                        <img src="{{ image.image.url }}" height="100%" alt="">
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+            </div>
+        </div>
+
+        <div class="project-paper">
+            <div class="project d-flex flex-column align-items-center">
+                <div class="title">Project</div>
+                <div class="content">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row">과제</th>
+                                <td>{{ project.project }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">주관</th>
+                                <td>{{ project.institute }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">사업</th>
+                                <td>{{ project.business }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">기간</th>
+                                <td>{{ project.term_start }} ~ {{ project.term_end }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="more-btn-out">
+                    <a href="#" class="more-btn more-btn-grey">자세히보기</a>
+                </div>
+            </div>
+            <div class="paper d-flex flex-column align-items-center">
+                <div class="title">Paper</div>
+                <div class="content">
+                    <table class="table">
+                        <tbody>
+                            {% for journal in journals|slice:"4" %}
+                            <tr>
+                                <th scope="row"><span class="category-tag">ACCEPTED</span></th>
+                                <td>{{ journal.summary }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="more-btn-out">
+                    <a href="#" class="more-btn more-btn-grey">자세히보기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var imageSwiper = new Swiper ('.swiper-container', {
+        loop: true,
+        slidesPerView: 'auto',
+         spaceBetween: 20,
+
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        // And if we need scrollbar
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: true
+        },
+    })
+</script>
+
+{% endblock %}
+
+
+
+
+
+                <span class="category-tag-out">
+                    <span class="category-tag">ACCEPTED</span>
+                </span>
+
+

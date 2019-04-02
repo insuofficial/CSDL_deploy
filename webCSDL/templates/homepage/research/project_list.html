@@ -1,0 +1,100 @@
+{% extends "homepage/header_footer.html" %}
+{% load staticfiles %}
+
+<!-- head part -->
+{% block title %}Project{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'homepage/research/project_list_style.css' %}">
+<link rel="stylesheet" href="{% static 'homepage/includes/sub_header_style.css' %}">
+{% endblock %}
+
+{% block js %}
+{% endblock %}
+
+
+{% block sub_header %}
+{% include 'homepage/includes/sub_header_research.html' %}
+{% endblock %}
+
+
+<!-- middle part -->
+{% block middle %}
+<div class="middle">
+    <div class="projects-out">
+        <div class="projects-in">
+            <div class="project-going d-flex flex-column"><span></span>On-Going Project</div>
+            {% for project in projects_going %}
+            <div class="project">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th scope="row">과제</th>
+                            <td>{{ project.project }}
+                                {% if user.is_staff %}
+                                    <div class="mt-3">
+                                        <a href="{% url 'project_edit' project.pk %}"
+                                            class="btn btn-primary btn-sm"
+                                            role="button">Edit</a>
+                                    </div>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">주관</th>
+                            <td>{{ project.institute|default:"" }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">사업</th>
+                            <td>{{ project.business|default:"" }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">기간</th>
+                            <td>{{ project.term_start|date:'Y.m.d' }} ~ {{ project.term_end|date:'Y.m.d' }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            {% endfor %}
+            <div class="project-complete d-flex flex-column"><span></span>Completed Project</div>
+            {% for project in projects_complete %}
+            <div class="project">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th scope="row">과제</th>
+                            <td>{{ project.project }}
+                                {% if user.is_staff %}
+                                    <div class="mt-3">
+                                        <a href="{% url 'project_edit' project.pk %}"
+                                            class="btn btn-primary btn-sm"
+                                            role="button">Edit</a>
+                                    </div>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">주관</th>
+                            <td>{{ project.institute }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">사업</th>
+                            <td>{{ project.business }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">기간</th>
+                            <td>{{ project.term_start }} ~ {{ project.term_end|date:'Y.m.d' }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            {% endfor %}
+            {% if user.is_staff %}
+            <div class="mb-4">
+                <a href="{% url 'project_post' %}" class="btn btn-primary">New Project</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+

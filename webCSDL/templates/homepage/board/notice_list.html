@@ -1,0 +1,68 @@
+{% extends "homepage/header_footer.html" %}
+{% load staticfiles %}
+
+<!-- head part -->
+{% block title %}notice{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'homepage/board/notice_list_style.css' %}">
+<link rel="stylesheet" href="{% static 'homepage/includes/sub_header_style.css' %}">
+{% endblock %}
+
+{% block js %}
+<script>
+    $(function(){
+        $(".clickable-row")
+            .click(function() {
+              window.location = $(this).data("href");
+            })
+            .css('cursor', 'pointer');
+    });
+</script>
+{% endblock %}
+
+
+{% block sub_header %}
+{% include 'homepage/includes/sub_header_board.html' %}
+{% endblock %}
+
+
+<!-- middle part -->
+{% block middle %}
+  <div class="list_out">
+      {% if user.is_staff %}
+      <div class="mb-4">
+          <a href="{% url 'notice_post' %}" class="btn btn-primary">New Notice</a>
+      </div>
+      {% endif %}
+
+    <table class="table mb-4">
+      <thead class="thead-dark">
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Published date</th>
+          <th>Views</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for notice in components %}
+      <tbody class="clickable-row" data-href="{% url 'notice_detail' notice.pk %}">
+          <tr class="notice">
+            <td>{{ notice.title }}</td>
+            <td>{{ notice.user }}</td>
+            <td>{{ notice.published_date }}</td>
+            <td>{{ notice.views }}</td>
+          </tr>
+          <tr>
+            <td colspan="4">
+              <div class="content">{{ notice.content|safe }}</div>
+            </td>
+          </tr>
+      </tbody>
+      {% endfor %}
+    </table>
+
+    {% include 'homepage/includes/include_paging.html' %}
+  </div>
+{% endblock %}
+

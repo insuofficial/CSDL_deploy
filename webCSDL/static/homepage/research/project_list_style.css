@@ -1,0 +1,66 @@
+
+/* ---------- sub-header start -----------*/
+.sub-header-menu ul li:nth-of-type(2) {
+    background-color: #fccf31;
+}
+/* ---------- sub-header end -----------*/
+
+
+/* ---------- middle start -----------*/
+.projects-out {
+    max-width: 1300px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+.projects-in {
+    padding: 1rem 2rem;
+}
+
+.mb-4 {
+    float: right;
+}
+
+.mt-3 {
+    display: inline;
+    margin-left: 1.5rem;
+}
+
+.project-going, .project-complete {
+    margin: 3rem 0.5rem 1rem 0.5rem;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.project-going span, .project-complete span {
+    height: 2px;
+    width: 80px;
+    margin-bottom: 0.5rem;
+    background-color: #003876;
+}
+
+.project {
+    margin: 0.5rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    border-radius: 1rem;
+    background-color: #eeeeee;
+}
+
+tbody > tr:nth-of-type(1) th, tbody > tr:nth-of-type(1) td {
+    border-top: none;
+}
+.table th {
+    width: 5rem;
+    padding-left: 1.5rem;
+}
+
+/* ---------- middle end -----------*/
+
+
+/* ---------- media screen start -----------*/
+@media (min-width: 992px) {
+
+}
+
+/* ---------- media screen end -----------*/

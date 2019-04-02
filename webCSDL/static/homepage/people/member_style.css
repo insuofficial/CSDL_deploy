@@ -1,0 +1,83 @@
+
+/* ---------- sub-header start -----------*/
+.sub-header-menu ul li:nth-of-type(2) {
+    background-color: #fccf31;
+}
+/* ---------- sub-header end -----------*/
+
+
+/* ---------- middle start -----------*/
+.professor-out {
+    max-width: 1300px;
+    margin: 1.5rem auto;
+}
+
+.professor-in {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.phd, .ms, .intern {
+    margin: 1rem 0.5rem;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.phd span, .ms span, .intern span {
+    height: 2px;
+    width: 80px;
+    margin-bottom: 0.5rem;
+    background-color: #003876;
+    content: '';
+}
+
+.top-info {
+    margin: 0.5rem;
+    flex-wrap: wrap;
+    background-color: #eeeeee;
+}
+
+.top-info-image {
+    padding-left: 3rem;
+    padding-top: 3rem;
+}
+
+.top-info-content {
+    padding: 0 3rem;
+    width: 100%;
+}
+
+.top-info-name {
+    font-size: 2.5rem;
+    font-weight: 500;
+    padding-top: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.top-info-name  span {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #666666;
+    padding-left: 0.5rem;
+}
+
+.top-info-more > table > tbody > tr th { width: 20%; }
+.top-info-more > table > tbody > tr td { width: 80%; }
+
+
+/* ---------- middle end -----------*/
+
+
+/* ---------- media screen start -----------*/
+@media (min-width: 992px) {
+    .top-info-content {
+        width: 70%;
+    }
+
+    .top-info-image {
+        padding: 2.5rem 2rem;
+        margin-right: 1rem;
+    }
+}
+
+/* ---------- media screen end -----------*/

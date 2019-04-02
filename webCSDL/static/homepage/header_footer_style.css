@@ -1,0 +1,187 @@
+ul, p {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a:hover {
+    text-decoration:none
+}
+
+
+.navbar {
+    padding: 0rem 0;
+    margin: 0 auto;
+    max-width: 1300px;
+}
+
+.main-title {
+    margin: 10px 0;
+    max-width: 1300px;
+}
+
+.navbar-brand{
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: .3125rem;
+    margin-bottom: .3125rem;
+    background-image: url(./img/yonsei_header.png);
+    background-repeat: no-repeat;
+}
+
+.CSDL {
+    height: 50px;
+    padding-left: 170px;
+    margin: 0;
+    font-size: 40px;
+    font-weight: 700;
+    color: #5B5D5F;
+    line-height: 1.2;
+}
+
+.main-menu {
+    background-color: #003876;
+}
+
+#collapsingNavbar1 {
+    margin-top: 15px;
+}
+
+#collapsingNavbar1 li a {
+    color: #969696;
+    font-size: 14px;
+}
+
+.oi {
+    margin-right: 4px;
+}
+
+#collapsingNavbar2 {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+#collapsingNavbar2 ul li a {
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+}
+
+#collapsingNavbar2 .dropdown-menu {
+    margin: 0;
+    background-color: #003876;
+    border: none;
+    border-radius: initial;
+}
+
+.dropdown:hover>.dropdown-menu {
+    display: block;
+}
+
+
+/* -------- footer part start ----------*/
+
+footer {
+    color: #999;
+    background: #4d4d4d;
+}
+
+.footer-out {
+    padding: 2.6rem 10%;
+    margin: 0 auto;
+    max-width: 1300px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.footer-out p {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.footer-out div ul {
+    font-size: 0.9rem;
+}
+
+/* -------- footer part end ------------*/
+
+
+@media (min-width: 992px) {
+    #collapsingNavbar2  ul{
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    #collapsingNavbar2 .dropdown-item {
+        display: inline;
+    }
+
+    #collapsingNavbar2 ul li:nth-of-type(1) div {
+        padding-left: 5%;
+    }
+
+    #collapsingNavbar2 ul li:nth-of-type(2) div {
+        padding-left: 23%;
+    }
+
+    #collapsingNavbar2 ul li:nth-of-type(3) div {
+        padding-left: 42%;
+    }
+
+    #collapsingNavbar2 ul li:nth-of-type(4) div {
+        padding-left: 62%;
+    }
+
+    #collapsingNavbar2 .nav-link {
+        padding: 1rem 3rem;
+    }
+
+    .footer-out p {
+        max-width: 250px;
+        margin-right: 4%;
+        margin-bottom: 0;
+    }
+}
+
+
+
+
+@media (max-width: 1150px) {
+    .navbar-brand {
+        height: 50px;
+        width: 170px;
+    }
+
+    .CSDL {
+        display: none;
+    }
+
+}
+
+
+
+/* iPad */
+@media (max-width: 800px) {
+    html {
+        font-size: 16px;
+    }
+}
+/* Pixel & iPhone Plus */
+@media (max-width: 500px) {
+    html {
+        font-size: 11px;
+    }
+}
+/* Galaxy & iPhone */
+@media (max-width: 400px) {
+    html {
+        font-size: 10px;
+    }
+}
+/* iPhone 5/SE */
+@media (max-width: 320px) {
+    html {
+        font-size: 9px;
+    }
+}

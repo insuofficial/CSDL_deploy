@@ -1,0 +1,91 @@
+{% extends "homepage/header_footer.html" %}
+{% load staticfiles %}
+
+<!-- head part -->
+{% block title %}Contact{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'homepage/contact/contact_style.css' %}">
+<link rel="stylesheet" href="{% static 'homepage/includes/sub_header_style.css' %}">
+{% endblock %}
+
+{% block js %}
+{% endblock %}
+
+
+{% block sub_header %}
+{% include 'homepage/includes/sub_header_contact.html' %}
+{% endblock %}
+
+
+<!-- middle part -->
+{% block middle %}
+<div class="middle">
+    <div class="contact-out">
+        <div class="contact-in">
+            <div class="map">{{ contact.location|safe }}</div>
+            <div class="detail d-flex flex-column">
+                <div class="korean d-flex flex-column"><span></span>한국어</div>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                          <th scope="col"></th>
+                          <th scope="col">교수님</th>
+                          <th scope="col">연구실</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                          <th scope="row">전화</th>
+                          <td>{{ contact.tel_professor_ko }}</td>
+                          <td>{{ contact.tel_lab_ko }}</td>
+                        </tr>
+                        <tr>
+                          <th rowspan="2" scope="row">주소</th>
+                          <td colspan="2">{{ contact.address_ko }}</td>
+                        </tr>
+                        <tr>
+                          <td>{{ contact.address_professor_ko }}</td>
+                          <td>{{ contact.address_lab_ko }}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">이메일</th>
+                          <td colspan="2">{{ contact.email_professor }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="english d-flex flex-column"><span></span>English</div>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                          <th scope="col"></th>
+                          <th scope="col">Office</th>
+                          <th scope="col">Lab.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                          <th scope="row">Tel</th>
+                          <td>{{ contact.tel_professor_en }}</td>
+                          <td>{{ contact.tel_lab_en }}</td>
+                        </tr>
+                        <tr>
+                            <th rowspan="2" scope="row">Address</th>
+                            <td>{{ contact.address_professor_en }}</td>
+                            <td>{{ contact.address_lab_en }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">{{ contact.address_en }}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">E-mail</th>
+                          <td colspan="2">{{ contact.email_professor }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

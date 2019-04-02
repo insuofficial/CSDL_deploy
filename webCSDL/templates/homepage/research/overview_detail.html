@@ -1,0 +1,59 @@
+{% extends "homepage/header_footer.html" %}
+{% load staticfiles %}
+
+<!-- head part -->
+{% block title %}Overview{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'homepage/research/overview_detail_style.css' %}">
+<link rel="stylesheet" href="{% static 'homepage/includes/sub_header_style.css' %}">
+{% endblock %}
+
+{% block js %}
+{% endblock %}
+
+
+{% block sub_header %}
+{% include 'homepage/includes/sub_header_research.html' %}
+{% endblock %}
+
+
+<!-- middle part -->
+{% block middle %}
+<div class="middle">
+    <div class="research_area_out d-flex flex-column">
+        <div class="research_area_in">
+            <h1 class="d-flex"><span></span>{{ research_area.research_area }}</h1>
+            <div class="accordion" id="accordionresearch">
+            {% for research in researches %}
+                <div class="card">
+                    <div class="card-header" id="heading{{ forloop.counter }}">
+                        <h5 class="mb-0">
+                            <a class="collapsed text-body stretched-link text-decoration-none" data-toggle="collapse" href="#collapse{{ forloop.counter }}" aria-expanded="false" aria-controls="collapse{{ forloop.counter }}">
+                                {{ research.research_name }}
+                            </a>
+                        </h5>
+                    </div>
+                    {% if forloop.first %}
+                    <div id="collapse{{ forloop.counter }}" class="collapse show" aria-labelledby="heading{{ forloop.counter }}" data-parent="#accordionresearch">
+                    {% else %}
+                    <div id="collapse{{ forloop.counter }}" class="collapse" aria-labelledby="heading{{ forloop.counter }}" data-parent="#accordionresearch">
+                    {% endif %}
+                        <div class="card-body">
+                            {{ research.research_detail|safe }}
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.last and forloop.counter == 1 %}
+                    <script>
+                    $(function(){
+                        $('.accordion>.card:first-of-type').css('border-bottom', '1px solid rgba(0,0,0,.125)');
+                    });
+                    </script>
+                {% endif %}
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

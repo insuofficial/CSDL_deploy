@@ -1,0 +1,70 @@
+{% extends "homepage/header_footer.html" %}
+{% load staticfiles %}
+
+<!-- head part -->
+{% block title %}Patent{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'homepage/publication/patent_list_style.css' %}">
+<link rel="stylesheet" href="{% static 'homepage/includes/sub_header_style.css' %}">
+{% endblock %}
+
+{% block js %}
+{% endblock %}
+
+
+{% block sub_header %}
+{% include 'homepage/includes/sub_header_publication.html' %}
+{% endblock %}
+
+
+<!-- middle part -->
+{% block middle %}
+<div class="middle">
+    <div class="journal-out d-flex flex-column">
+        <div class="international">
+            <div class="title-out d-flex">
+                <h1 class="title d-inline-flex flex-column"><span></span>International Patent</h1>
+                {% if user.is_staff %}
+                <div class="mb-4">
+                    <a href="{% url 'patent_post' %}" class="btn btn-primary">New Patent</a>
+                </div>
+                {% endif %}
+            </div>
+            {% for patent in patents_international %}
+            <div class="year-out d-flex">
+                <h1 class="year d-flex"><span></span>{{ patent.year }}</h1>
+                {% if user.is_staff %}
+                <div class="mt-3">
+                    <a href="{% url 'patent_edit' patent.pk %}"
+                        class="btn btn-primary btn-sm"
+                        role="button">Edit</a>
+                </div>
+                {% endif %}
+            </div>
+            <div>
+                {{ patent.patent|safe }}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="korean">
+        <h1 class="title d-inline-flex flex-column"><span></span>Korean Patent</h1>
+        {% for patent in patents_korean %}
+        <div class="year-out d-flex">
+            <h1 class="year d-flex"><span></span>{{ patent.year }}</h1>
+            {% if user.is_staff %}
+            <div class="mt-3">
+                <a href="{% url 'patent_edit' patent.pk %}"
+                    class="btn btn-primary btn-sm"
+                    role="button">Edit</a>
+            </div>
+            {% endif %}
+        </div>
+        <div>
+            {{ patent.patent|safe }}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+

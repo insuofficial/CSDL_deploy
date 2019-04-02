@@ -1,0 +1,41 @@
+{% extends "homepage/header_footer.html" %}
+{% load staticfiles %}
+
+<!-- head part -->
+{% block title %}Overview{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'homepage/research/overview_list_style.css' %}">
+<link rel="stylesheet" href="{% static 'homepage/includes/sub_header_style.css' %}">
+{% endblock %}
+
+{% block js %}
+{% endblock %}
+
+
+{% block sub_header %}
+{% include 'homepage/includes/sub_header_research.html' %}
+{% endblock %}
+
+
+<!-- middle part -->
+{% block middle %}
+<div class="middle">
+    <div class="overview-out">
+        <div class="overview-in">
+            {% for research_area in research_areas %}
+            <a href="{% url 'overview_detail' research_area%}" class="circle d-flex">
+                <div class="research_area d-flex flex-column">
+                    <h1 class="d-flex">{{ research_area.research_area }}</h1>
+                    {% for research in researches %}
+                        {% if research.research_area.research_area ==  research_area.research_area %}
+                        <div class="research d-flex flex-column">{{ research.research_name }}</div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+

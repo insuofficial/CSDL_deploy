@@ -1,0 +1,156 @@
+/*------------ share -------------------*/
+.table {
+    margin: 0;
+}
+
+tbody tr:nth-of-type(1) th, tbody tr:nth-of-type(1) td {
+    border-top: none;
+}
+
+.title {
+    margin: 1rem 0.5rem;
+    font-size: 2.4rem;
+    font-weight: 500;
+    align-items: center;
+}
+
+.title:before {
+    display: block;
+    margin: 0 auto;
+    height: 0.1rem;
+    width: 60%;
+    margin-bottom: 0.5rem;
+    background-color: #003876;
+    content: '';
+}
+
+
+.more-btn {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    border-width: 1px 0 0 1px;
+    border-style: solid;
+    border-color: red;
+    color: red;
+    width: 160px;
+    height: 47px;
+    font-size: 15px;
+    line-height: 47px;
+    text-align: center;
+}
+.more-btn:before {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 26px;
+    -webkit-transform: skewX(-44deg);
+    -ms-transform: skewX(-44deg);
+    transform: skewX(-44deg);
+    border-width: 0 1px 1px 0;
+    border-style: solid;
+    border-color: red;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    content: '';
+}
+.more-btn:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: -webkit-calc(100% - 13px);
+    height: calc(100% - 13px);
+    border-right: 1px solid red;
+    content: '';
+}
+
+.more-btn-grey {
+    border-color: #73706b;
+    color: #73706b;
+}
+.more-btn-grey:before {border-color: #73706b;}
+.more-btn-grey:after {border-right: 1px solid #73706b;}
+
+/*------------ share -------------------*/
+
+/* -------- middle part start ----------*/
+
+.out {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.intro {
+    padding: 2rem 6% 0 6%;
+}
+
+.intro > .content{
+    padding: 0 5%;
+    font-size: 1.4rem;
+}
+
+.images {
+    margin: 2rem 0;
+    padding: 0 1rem;
+    background-color: #f1f5fa;
+    box-shadow: 0 0 5px 5px #ececec;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 14rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+.swiper-slide {
+     width: auto;
+}
+
+.project-paper {
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+}
+
+.project, .paper {
+    flex-basis: 50%;
+    padding: 2rem 7%;
+}
+
+.project-paper .content {
+    width: 100%;
+    padding: 1rem 1rem;
+    margin-bottom: 2rem;
+    border: #003876 solid 0.1rem;
+}
+
+.table th {
+    width: 5rem;
+    vertical-align: middle;
+}
+
+
+
+.category-tag {
+    display: inline-block;
+    padding: 0.2rem;
+    border: 1px solid red;
+    border-radius: 2px;
+    font-size: 0.8rem;
+    color: red;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    -khtml-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* -------- middle part end ------------*/
+
+@media (min-width: 900px) {
+    .project-paper {
+        display: flex;
+    }
+}

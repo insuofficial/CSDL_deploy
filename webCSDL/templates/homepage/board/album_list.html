@@ -1,0 +1,47 @@
+﻿{% extends "homepage/header_footer.html" %}
+{% load staticfiles %}
+
+<!-- head part -->
+{% block title %}Album{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'homepage/board/album_list_style.css' %}">
+<link rel="stylesheet" href="{% static 'homepage/includes/sub_header_style.css' %}">
+{% endblock %}
+
+{% block js %}
+{% endblock %}
+
+
+{% block sub_header %}
+{% include 'homepage/includes/sub_header_board.html' %}
+{% endblock %}
+
+
+<!-- middle part -->
+{% block middle %}
+<div class="middle">
+  <div class="list-out">
+      <div class="list-in d-flex flex-column">
+          <div class="title-out d-flex">
+            <div class="title d-inline-flex flex-column"><span></span>Album</div>
+            {% if user.is_staff %}
+            <div class="mb-4">
+                <a href="{% url 'album_post' %}" class="btn btn-primary">New Album</a>
+            </div>
+            {% endif %}
+          </div>
+          <div class="album-out d-flex">
+            {% for album in albums %}
+            <a href="{% url 'album_detail' album.pk %}" class="album d-flex flex-column">
+                <img src="{{ album.thumbnail.url }}" alt="img">
+                <p>{{ album.title }}</p>
+            </a>
+            {% endfor %}
+
+            {% include 'homepage/includes/include_paging.html' %}
+          </div>
+      </div>
+  </div>
+</div>
+{% endblock %}
+
