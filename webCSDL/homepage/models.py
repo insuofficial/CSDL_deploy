@@ -10,7 +10,6 @@ import datetime
 #           Main           #
 ############################
 class Main(models.Model):
-    notice = RichTextUploadingField()
     introduction = RichTextUploadingField()
 
     def __str__(self):
@@ -60,7 +59,7 @@ class ResearchArea(models.Model):
 class Research(models.Model):
     research_area = models.ForeignKey(ResearchArea, on_delete=models.CASCADE)
     research_name = models.CharField(max_length=128, primary_key=True)
-    research_detail = RichTextUploadingField()
+    research_detail = RichTextUploadingField(blank=True, null=True)
 
     def __str__(self):
         return '[{}] {}'.format(self.research_area, self.research_name)
@@ -87,10 +86,10 @@ class Journal(models.Model):
     year = models.IntegerField(choices=year_choices, default=current_year)
     summary = models.CharField(max_length=144)
     journal = models.CharField(max_length=255, primary_key=True)
-    detail = RichTextUploadingField()
+    detail = RichTextUploadingField(blank=True, null=True)
 
     def __str__(self):
-        return '{}'.format(self.year)
+        return '[{}] {}'.format(self.year, self.journal)
 
 class Conference(models.Model):
     conference = RichTextUploadingField()
@@ -100,15 +99,15 @@ class Conference(models.Model):
 
 class Patent(models.Model):
     current_year = datetime.date.today().year
-    year_choices = [(r, r) for r in range(2009, current_year + 1)]
+    year_choices = [(r, r) for r in range(2008, current_year + 1)]
     location_choices = [('International Patent', 'International Patent'), ('Korean Patent', 'Korean Patent')]
 
-    location = models.CharField(choices=location_choices, default='International Patent', max_length=128, primary_key=True)
+    location = models.CharField(choices=location_choices, default='International Patent', max_length=128)
     year = models.IntegerField(choices=year_choices, default=current_year)
-    patent = RichTextUploadingField()
+    patent = RichTextUploadingField(blank=True, null=True)
 
     def __str__(self):
-        return '{}'.format(self.year)
+        return '[{}] {}'.format(self.location, self.year)
 
 #############################
 #           Board           #
@@ -116,7 +115,7 @@ class Patent(models.Model):
 class Notice(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=144, primary_key=True)
-    content = RichTextUploadingField()
+    content = RichTextUploadingField(blank=True, null=True)
     created_date = models.DateTimeField(auto_now_add=True)
     published_date = models.DateField(blank=True, null=True)
     views = models.PositiveIntegerField(default=0)
@@ -143,7 +142,7 @@ class Album(models.Model):
     title = models.CharField(max_length=128, primary_key=True)
     image_url = models.URLField(max_length=400, blank=True, null=True)
     thumbnail = models.ImageField(upload_to='Album/',  default='homepage/img/no-image-icon.png')
-    detail = RichTextUploadingField()
+    detail = RichTextUploadingField(blank=True, null=True)
     date = models.DateField()
 
     def __str__(self):
@@ -167,7 +166,7 @@ class Contact(models.Model):
     address_lab_ko = models.CharField(max_length=64, blank=True, null=True)
     email_professor = models.EmailField(max_length=32, blank=True, null=True)
 
-    location = RichTextUploadingField()
+    location = RichTextUploadingField(blank=True, null=True)
 
     def __str__(self):
         return '{}'.format(self.address_ko)

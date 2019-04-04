@@ -21,7 +21,7 @@
 {% block middle %}
 <div class="middle">
     <div class="journal-out d-flex flex-column">
-        <div class="journal_in">
+        <div class="journal-in">
             <div class="title-out d-flex">
                 <h1 class="title d-inline-flex flex-column"><span></span>International Journal</h1>
                 {% if user.is_staff %}
@@ -33,38 +33,45 @@
 
 
             <h1 class="year d-flex"><span></span>Submitted</h1>
-            {% for journal in journals_submitted %}
-            <div class="journal d-flex">
-                <div>{{ journal.journal }}</div>
-                {% if user.is_staff %}
-                <div class="mt-3">
-                    <a href="{% url 'journal_edit' journal.pk %}"
-                        class="btn btn-primary btn-sm"
-                        role="button">Edit</a>
-                </div>
-                {% endif %}
-            </div>
-            {% endfor %}
+            <ul>
+                {% for journal in journals_submitted %}
+                <li>
+                    <div class="journal d-flex">
+                        <div class="journal-detail">{{ journal.journal }}</div>
+                        {% if user.is_staff %}
+                        <div class="mt-3">
+                            <a href="{% url 'journal_edit' journal.pk %}"
+                                class="btn btn-primary btn-sm"
+                                role="button">Edit</a>
+                        </div>
+                        {% endif %}
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
 
 
             {% for year in years %}
             <h1 class="year d-flex"><span></span>{{ year }}</h1>
-            {% for journal in journals %}
-            {% if jornal.year == year %}
-            <div class="journal d-flex">
-                <div>{{ journal.journal }}</div>
-                {% if user.is_staff %}
-                <div class="mt-3">
-                    <a href="{% url 'journal_edit' journal.pk %}"
-                        class="btn btn-primary btn-sm"
-                        role="button">Edit</a>
-                </div>
+            <ul>
+                {% for journal in journals %}
+                {% if journal.year == year %}
+                <li>
+                    <div class="journal d-flex">
+                        <div class="journal-detail">{{ journal.journal }}</div>
+                        {% if user.is_staff %}
+                        <div class="mt-3">
+                            <a href="{% url 'journal_edit' journal.pk %}"
+                                class="btn btn-primary btn-sm"
+                                role="button">Edit</a>
+                        </div>
+                        {% endif %}
+                    </div>
+                </li>
                 {% endif %}
-            </div>
-            {% endif %}
+                {% endfor %}
+            </ul>
             {% endfor %}
-            {% endfor %}
-        </div>
         </div>
     </div>
 </div>

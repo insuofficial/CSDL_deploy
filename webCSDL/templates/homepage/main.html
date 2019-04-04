@@ -48,7 +48,6 @@
     <div class="out">
 
         <div class="notice">
-            {{ main.notice|safe }}
             <!-- -->
                 <div class="d-flex flex-column" style="
                 padding: 5rem 20%;
@@ -76,7 +75,7 @@
         <div class="intro align-items-center">
             <div class="d-flex flex-column align-items-center">
                 <div class="title">Introduction</div>
-                <div>{{ main.introduction|safe }}</div>
+                <divc class="intro-content">{{ main.introduction|safe }}</div>
             </div>
             <div class="images">
                 <div class="swiper-container">
@@ -120,7 +119,7 @@
                     </table>
                 </div>
                 <div class="more-btn-out">
-                    <a href="#" class="more-btn more-btn-grey">자세히보기</a>
+                    <a href="{% url 'project_list' %}" class="more-btn more-btn-grey">자세히보기</a>
                 </div>
             </div>
             <div class="paper d-flex flex-column align-items-center">
@@ -138,7 +137,7 @@
                     </table>
                 </div>
                 <div class="more-btn-out">
-                    <a href="#" class="more-btn more-btn-grey">자세히보기</a>
+                    <a href="{% url 'journal_list' %}" class="more-btn more-btn-grey">자세히보기</a>
                 </div>
             </div>
         </div>
@@ -175,13 +174,3 @@
 </script>
 
 {% endblock %}
-
-
-
-
-
-                <span class="category-tag-out">
-                    <span class="category-tag">ACCEPTED</span>
-                </span>
-
-

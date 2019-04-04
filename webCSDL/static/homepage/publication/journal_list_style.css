@@ -8,13 +8,18 @@
 
 /* ---------- middle start -----------*/
 
-.journal_out {
+.journal-out {
     max-width: 1300px;
     margin: 2rem auto;
 }
 
-.journal_in {
+.journal-in {
     margin: 0 1rem;
+}
+
+.journal-in li {
+    margin-left: 10%;
+    list-style: circle;
 }
 
 .title-out, .year-out {
@@ -49,6 +54,15 @@
     width: 0.8rem;
     background-color: #003876;
     content: '';
+}
+
+.journal {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.journal-detail {
+    margin-right: 10%;
 }
 
 .mb-4, .mt-3 {

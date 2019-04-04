@@ -24,8 +24,15 @@
 }
 
 .top-info-image {
+    align-items: center;
     padding: 2rem;
     margin-right: 1rem;
+
+}
+
+.top-info-image img {
+    height: 16rem;
+    width: 12rem;
 
 }
 

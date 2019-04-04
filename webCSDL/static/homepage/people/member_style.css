@@ -42,6 +42,11 @@
     padding-top: 3rem;
 }
 
+.top-info-image img {
+    height: 14rem;
+    width: 11rem;
+}
+
 .top-info-content {
     padding: 0 3rem;
     width: 100%;

@@ -168,7 +168,7 @@ footer {
     }
 }
 /* Pixel & iPhone Plus */
-@media (max-width: 500px) {
+@media (max-width: 560px) {
     html {
         font-size: 11px;
     }
