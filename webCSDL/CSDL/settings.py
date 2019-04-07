@@ -22,9 +22,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '(%&zlb%14lcdgr6grr^5%_0$2i##!x899z=f5i1$99u1d^4i+('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
+    '127.0.0.1',
     'localhost',
     'insuofficial.pythonanywhere.com',
 ]
@@ -83,10 +84,11 @@ WSGI_APPLICATION = 'CSDL.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'insuofficial$django',
-        'USER': 'insuofficial',
+        'NAME': 'django',
+        'USER': 'djangouser',
         'PASSWORD': 'djangopass',
-        'HOST': 'insuofficial.mysql.pythonanywhere-services.com',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 

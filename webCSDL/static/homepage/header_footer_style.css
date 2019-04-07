@@ -79,6 +79,33 @@ a:hover {
 }
 
 
+
+
+/*---- menu animation ----*/
+#collapsingNavbar2 .nav-item:after {
+	content: '';
+	display: block;
+	margin: auto;
+	height: 0.2rem;
+	width: 0px;
+	background: transparent;
+	transition: width .5s ease, background-color .5s ease;
+}
+#collapsingNavbar2 .nav-item:hover:after {
+	width: 100%;
+	background: yellow;
+}
+
+
+
+#collapsingNavbar2 .dropdown-item:hover {
+    background: none;
+    color: yellow!important;
+}
+
+
+
+
 /* -------- footer part start ----------*/
 
 footer {
@@ -133,8 +160,8 @@ footer {
         padding-left: 62%;
     }
 
-    #collapsingNavbar2 .nav-link {
-        padding: 1rem 3rem;
+    #collapsingNavbar2 .nav-item {
+        margin: 0.8rem 3rem;
     }
 
     .footer-out p {

@@ -8,12 +8,14 @@
         <title>Sign up</title>
 
         <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'homepage/account/login_style.css' %}">
         <script src="{% static 'jquery-3.3.1.js' %}"></script>
     </head>
 
     <body>
 
-        <div class="signup-out">
+        <div class="signup-out d-flex flex-column">
+            <img src="{% static 'homepage/img/yonsei_header.png %}" alt="">
             <h2>Log in</h2>
             <form method="post" novalidate>
                 {% csrf_token %}
@@ -21,7 +23,7 @@
                 {% include 'homepage/includes/include_form.html' %}
               <button type="submit" class="btn btn-primary btn-block">Log in</button>
             </form>
-            <address>COPYRIGHT© 2015 YONSEI UNIV. ALL RIGHTS RESERVED.</address>
+            <address>COPYRIGHT© 2019 CIRCUITS AND SYSTEMS DESIGN LAB. ALL RIGHTS RESERVED.</address>
         </div><noscript>&lt;p&gt;이 사이트는 자바스크립트를 지원하지 않으면 정상적으로 보이지 않을수 있습니다.&lt;/p&gt;</noscript>
 
     </body>

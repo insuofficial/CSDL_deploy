@@ -4,3 +4,11 @@ __pycache__
 webapp
 db.sqlite3
 .DS_Store
+
+CSDL/__init__.py
+CSDL/settings.py
+homepage/migrations/*
+!homepage/migrations/__init__.py
+
+uwsgi_params
+CSDL_nginx.conf
